@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>깐깐 농산물 - 신선한 깐양파 전문 공급업체</title>
+    <meta name="description" content="직접 농사, 산지 직거래로 저렴한 가격에 신선한 깐양파를 공급합니다. 연간 5,700톤 생산, 전국 납품 가능">
+    <meta name="keywords" content="깐양파, 양파, 농산물, 식자재, B2B, 납품, 김치공장, 만두공장">
+    
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js for 시세 그래프 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- 헤더 & 네비게이션 -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="깐깐 농산물" class="logo-img">
+                        <span class="logo-text">깐깐 농산물</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">홈</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="about.html" class="nav-link">회사소개</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">회사소개</a></li>
+                            <li><a href="about-history.html">회사연혁</a></li>
+                            <li><a href="about-location.html">오시는길</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="products.html" class="nav-link">제품소개</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="products-origin.html">산지소개</a></li>
+                            <li><a href="products-warehouse.html">창고소개</a></li>
+                            <li><a href="products-process.html">깐양파 제조공정</a></li>
+                            <li><a href="products-specs.html">깐양파 규격 및 가격</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="distribution.html" class="nav-link">유통/납품</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="distribution-channel.html">유통경로</a></li>
+                            <li><a href="distribution-clients.html">대표 납품처 안내</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">문의</a></li>
+                </ul>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sector1: 헤더 슬라이더 섹션 -->
+    <section id="hero" class="hero-section">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/main-1.webp')">
+                <div class="slide-content">
+                    <h1>양파만 바꿔도 수익이 늘 수 있습니다</h1>
+                    <p>직접 농사, 산지 직거래로 가격은 낮추고 신선함은 UP<br>전국 양파 업체와 가격 비교 해보세요</p>
+                    <a href="#contact-section" class="btn-primary">견적 문의하기</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/main-1.webp')">
+                <div class="slide-content">
+                    <h1>눈물 콧물 쏙 빼는 일은 저희가 하겠습니다</h1>
+                    <p>지금 편하게 받아 바로 사용하세요<br>깔끔하게 손질된 깐양파를 바로 납품받으세요</p>
+                    <a href="#products" class="btn-primary">제품 보기</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../image/main-1.webp')">
+                <div class="slide-content">
+                    <h1>생산 > 보관 > 검수 > 분류 > 포장 전과정을</h1>
+                    <p>직접 운영하며 최상급 품질만을 고집합니다<br>20년 경력의 전문가가 직접 관리합니다</p>
+                    <a href="#about" class="btn-primary">회사 소개</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 슬라이더 네비게이션 -->
+        <div class="slider-nav">
+            <button class="slide-btn active" data-slide="0"></button>
+            <button class="slide-btn" data-slide="1"></button>
+            <button class="slide-btn" data-slide="2"></button>
+        </div>
+        
+        <!-- 스크롤 다운 화살표 -->
+        <div class="scroll-down">
+            <a href="#partners-section">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Sector2: 믿을 수 있는 파트너 -->
+    <section id="partners-section" class="partners-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>믿을 수 있는 파트너</h2>
+                <p>20년 경력의 전문성과 대규모 생산능력으로 안정적인 공급을 보장합니다</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">🏭</div>
+                    <div class="stat-number" data-count="7">0</div>
+                    <div class="stat-unit">만 평</div>
+                    <div class="stat-label">직접 재배 면적</div>
+                    <div class="stat-detail">합천, 창녕, 밀양, 대한, 김해</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-number" data-count="5700">0</div>
+                    <div class="stat-unit">톤/년</div>
+                    <div class="stat-label">연간 납품량</div>
+                    <div class="stat-detail">직접생산 2,700톤 + 계약농가 3,000톤</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">🏬</div>
+                    <div class="stat-number" data-count="10000">0</div>
+                    <div class="stat-unit">톤</div>
+                    <div class="stat-label">저장 용량</div>
+                    <div class="stat-detail">첨단 저온창고 시설</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">👨‍💼</div>
+                    <div class="stat-number" data-count="20">0</div>
+                    <div class="stat-unit">년</div>
+                    <div class="stat-label">업계 경력</div>
+                    <div class="stat-detail">전문가의 노하우</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector3: 오늘의 양파 시세 -->
+    <section id="market-price-section" class="market-price-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>오늘의 양파 시세</h2>
+                <p>가락시장 깐양파 시세를 매일 업데이트합니다</p>
+            </div>
+            
+            <div class="price-container">
+                <div class="current-price-card">
+                    <h3>현재 가락시장 시세</h3>
+                    <div class="price-info">
+                        <div class="price-item">
+                            <span class="grade">특급</span>
+                            <span class="price" id="price-special">-</span>
+                            <span class="unit">원/20kg</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="grade">상급</span>
+                            <span class="price" id="price-high">-</span>
+                            <span class="unit">원/20kg</span>
+                        </div>
+                        <div class="price-item">
+                            <span class="grade">중급</span>
+                            <span class="price" id="price-medium">-</span>
+                            <span class="unit">원/20kg</span>
+                        </div>
+                    </div>
+                    <div class="update-time">
+                        최종 업데이트: <span id="update-time">-</span>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>최근 7일 시세 동향</h3>
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="price-cta">
+                <h3>오늘의 깐깐 농산물 양파 시세는 얼마나 저렴할까요?</h3>
+                <a href="#contact-section" class="btn-secondary">확인하기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector4: 업종별 맞춤 솔루션 -->
+    <section id="solutions-section" class="solutions-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>업종별 맞춤 솔루션</h2>
+                <p>고객사의 업종과 용도에 최적화된 깐양파를 공급합니다</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <div class="solution-item">
+                    <div class="solution-icon">🥬</div>
+                    <h3>김치공장</h3>
+                    <ul>
+                        <li>균일한 채썰기</li>
+                        <li>대용량 공급</li>
+                        <li>품질 일정성</li>
+                        <li>연중 안정 공급</li>
+                    </ul>
+                    <div class="solution-clients">
+                        <strong>주요 납품처:</strong> 대상, 동원F&B, 한성기업
+                    </div>
+                    <a href="#contact-section" class="solution-btn">상세보기</a>
+                </div>
+                
+                <div class="solution-item">
+                    <div class="solution-icon">🍯</div>
+                    <h3>소스공장</h3>
+                    <ul>
+                        <li>정밀 다이스컷</li>
+                        <li>이물질 제거</li>
+                        <li>규격 표준화</li>
+                        <li>맞춤 가공</li>
+                    </ul>
+                    <div class="solution-clients">
+                        <strong>주요 납품처:</strong> 오뚜기, CJ제일제당, 농심
+                    </div>
+                    <a href="#contact-section" class="solution-btn">상세보기</a>
+                </div>
+                
+                <div class="solution-item">
+                    <div class="solution-icon">📦</div>
+                    <h3>밀키트공장</h3>
+                    <ul>
+                        <li>소포장 전용</li>
+                        <li>신선도 보장</li>
+                        <li>맞춤 포장</li>
+                        <li>맞춤 배송</li>
+                    </ul>
+                    <div class="solution-clients">
+                        <strong>주요 납품처:</strong> 프레시지, 마켓컬리, 쿠팡이츠
+                    </div>
+                    <a href="#contact-section" class="solution-btn">상세보기</a>
+                </div>
+                
+                <div class="solution-item">
+                    <div class="solution-icon">🍽️</div>
+                    <h3>프랜차이즈</h3>
+                    <ul>
+                        <li>정기 공급 계약</li>
+                        <li>품질 일정성</li>
+                        <li>전국 배송</li>
+                        <li>안정적 물량</li>
+                    </ul>
+                    <div class="solution-clients">
+                        <strong>주요 납품처:</strong> 김가네, 본죽, 놀부
+                    </div>
+                    <a href="#contact-section" class="solution-btn">상세보기</a>
+                </div>
+                
+                <div class="solution-item">
+                    <div class="solution-icon">🚚</div>
+                    <h3>유통업체</h3>
+                    <ul>
+                        <li>유연한 배송</li>
+                        <li>다양한 규격</li>
+                        <li>물량 조절</li>
+                        <li>신속한 대응</li>
+                    </ul>
+                    <div class="solution-clients">
+                        <strong>주요 납품처:</strong> 이마트, 롯데마트, 농협
+                    </div>
+                    <a href="#contact-section" class="solution-btn">상세보기</a>
+                </div>
+                
+                <div class="solution-item">
+                    <div class="solution-icon">🏪</div>
+                    <h3>대형마트</h3>
+                    <ul>
+                        <li>브랜딩 지원</li>
+                        <li>안정적 물량</li>
+                        <li>품질 보증</li>
+                        <li>소포장 가능</li>
+                    </ul>
+                    <div class="solution-clients">
+                        <strong>주요 납품처:</strong> 하나로마트, 가락시장, 코스트코
+                    </div>
+                    <a href="#contact-section" class="solution-btn">상세보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector5: 문의하기 -->
+    <section id="contact-section" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>빠른 상담 신청</h2>
+                <p>전문 상담사가 24시간 내 연락드립니다</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-form-wrapper">
+                    <form id="consultation-form" class="consultation-form">
+                        <h3>✅ 맞춤 견적 상담</h3>
+                        
+                        <div class="form-group">
+                            <label for="company">회사명 *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">담당자명 *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">연락처 *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">이메일</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="business-type">업종 선택 *</label>
+                            <select id="business-type" name="business-type" required>
+                                <option value="">업종을 선택해주세요</option>
+                                <option value="kimchi">김치공장</option>
+                                <option value="sauce">소스공장</option>
+                                <option value="mealkit">밀키트공장</option>
+                                <option value="franchise">프랜차이즈</option>
+                                <option value="distribution">유통업체</option>
+                                <option value="retail">대형마트</option>
+                                <option value="other">기타</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quantity">예상 주문량</label>
+                            <select id="quantity" name="quantity">
+                                <option value="">선택해주세요</option>
+                                <option value="under-1ton">1톤 미만</option>
+                                <option value="1-5ton">1-5톤</option>
+                                <option value="5-10ton">5-10톤</option>
+                                <option value="over-10ton">10톤 이상</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">문의 내용</label>
+                            <textarea id="message" name="message" rows="3" placeholder="납품 일정, 특별 요구사항 등을 적어주세요"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">상담 신청하기</button>
+                    </form>
+                </div>
+                
+                <div class="sidebar-container">
+                    <!-- 빠른 상담 채널 -->
+                    <div class="quick-contact">
+                        <h3>빠른 상담 채널</h3>
+                        <div class="contact-channels">
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div class="contact-info">
+                                    <strong>즉시 전화 상담</strong>
+                                    <span>010-1234-5678</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">💬</div>
+                                <div class="contact-info">
+                                    <strong>카카오톡 상담</strong>
+                                    <span>@깐깐농산물</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-info">
+                                    <strong>이메일 상담</strong>
+                                    <span>info@example.com</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-features">
+                            <div class="feature">✅ 24시간 내 연락</div>
+                            <div class="feature">✅ 무료 샘플 제공</div>
+                            <div class="feature">✅ 맞춤 견적 상담</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 상담신청 현황 목록 -->
+                    <div class="consultation-status">
+                        <h3>최근 상담신청 현황</h3>
+                        <div class="status-list" id="consultation-list">
+                            <!-- 동적 생성 -->
+                        </div>
+                        <div class="status-note">
+                            * 개인정보 보호를 위해 일부 정보만 표시됩니다
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector6: 메뉴 배너 -->
+    <section id="menu-banners" class="menu-banners-section">
+        <div class="container">
+            <div class="banners-grid">
+                <div class="banner-item">
+                    <div class="banner-bg" style="background-image: linear-gradient(rgba(46, 125, 50, 0.8), rgba(46, 125, 50, 0.8)), url('images/company-intro.jpg')">
+                        <div class="banner-content">
+                            <h3>깐깐 농산물 소개</h3>
+                            <p>20년 경력의 전문성과<br>대규모 생산 시설을 확인하세요</p>
+                            <a href="about.html" class="banner-link">자세히 보기 →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="banner-item">
+                    <div class="banner-bg" style="background-image: linear-gradient(rgba(255, 143, 0, 0.8), rgba(255, 143, 0, 0.8)), url('images/delivery-partners.jpg')">
+                        <div class="banner-content">
+                            <h3>대표 납품처 소개</h3>
+                            <p>하나로마트, 가락시장 등<br>주요 거래처를 확인하세요</p>
+                            <a href="distribution.html" class="banner-link">자세히 보기 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <h3>깐깐 농산물</h3>
+                        <p>신선한 깐양파 전문 공급업체</p>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <h4>연락처</h4>
+                        <p>📍 경상남도 창원시 의창구 북면 월계길 9번길 9-2</p>
+                        <p>📞 010-1234-5678</p>
+                        <p>✉️ abc@defg.com</p>
+                    </div>
+                    
+                    <div class="footer-business">
+                        <h4>사업 정보</h4>
+                        <p>연간 생산량: 5,700톤</p>
+                        <p>저장 용량: 10,000톤</p>
+                        <p>업계 경력: 20년</p>
+                    </div>
+                </div>
+                
+                <div class="footer-menu">
+                    <div class="footer-nav">
+                        <h4>사이트 메뉴</h4>
+                        <ul>
+                            <li><a href="index.html">홈</a></li>
+                            <li><a href="about.html">회사소개</a></li>
+                            <li><a href="products.html">제품소개</a></li>
+                            <li><a href="distribution.html">유통/납품</a></li>
+                            <li><a href="contact.html">문의</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 깐깐 농산물. All rights reserved.</p>
+                <p>본 사이트의 모든 이미지와 콘텐츠는 저작권의 보호를 받습니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="script.js"></script>
+</body>
+</html>
